@@ -27,7 +27,7 @@ jobs:
           go build main.go         
 
       - name: Pulumi Preview
-        uses: pulumi/actions@v3
+        uses: pulumi/actions@v4
         with:
           command: preview
           refresh: true
