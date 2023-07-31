@@ -24,6 +24,7 @@ jobs:
 
       - name: Build Binary
         run: |
+          go mod tidy
           go build main.go         
 
       - name: Pulumi Preview
