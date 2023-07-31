@@ -1,0 +1,32 @@
+org: "ironcoreworks"
+
+teams:
+  - name: "AINF"
+    slug: "ainf"
+    description: "The AINF team."
+    members:
+      - username: "IronCore864"
+        role: "maintainer"
+  - name: "Nested Team"
+    slug: "nested-team"
+    description: "A nested team."
+    members:
+      - username: "IronCore864"
+        role: "maintainer"
+    teams:
+      - name: "child1"
+        slug: "child1"
+        description: "The Child-1 team that belongs to nested-team."
+        members:
+          - username: "IronCore864"
+      - name: "child2"
+        slug: "child2"
+        description: "The Child-2 team that belongs to nested-team."
+        members:
+          - username: "IronCore864"
+        teams:
+          - name: "grandchild1"
+            slug: "grandchild1"
+            description: "The Grandchild-1 team that belongs to child2 team."
+            members:
+              - username: "IronCore864"
