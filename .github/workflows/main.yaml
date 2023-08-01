@@ -1,8 +1,9 @@
-name: Pull Request Preview
+name: Update
 
 on:
-  pull_request:
-  workflow_dispatch:
+  push:
+    branches:
+      - "main"
 
 env:
   AWS_REGION: us-east-1
@@ -11,11 +12,9 @@ env:
   PULUMI_CONFIG_PASSPHRASE: ""
 
 jobs:
-  pull-request:
+  main:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-    name: Preview
+    name: Update
     steps:
       - uses: actions/checkout@v3
 
@@ -32,8 +31,7 @@ jobs:
       - name: Pulumi Preview
         uses: pulumi/actions@v4
         with:
-          command: preview
+          command: up
           refresh: true
           stack-name: dev
-          comment-on-pr: true
           cloud-url: s3://tiexin-pulumi-test-state
